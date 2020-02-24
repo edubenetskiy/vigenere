@@ -2,7 +2,7 @@
 
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-An implementation of Vigenère cipher in Java.
+An implementation of the Vigenère cipher in Java.
 
 Supports encryption and decryption of texts written in a Latin alphabet.
 
