@@ -1,8 +1,10 @@
-package space.banka.ifmo.infosec.vigenere;
+package space.banka.ifmo.infosec.vigenere.core.entities;
 
 import java.util.HashMap;
 
-public class FixedAlphabet implements Alphabet {
+public class FixedAlphabet extends Alphabet {
+
+    public static final int NOT_FOUND = -1;
 
     private final String chars;
     private final HashMap<Integer, Integer> charToIndex;
@@ -12,11 +14,7 @@ public class FixedAlphabet implements Alphabet {
         this.charToIndex = charToIndex;
     }
 
-    static Alphabet fromString(String alphabetChars) {
-        return new FixedAlphabet(alphabetChars, buildAlphabetToIndexMap(alphabetChars));
-    }
-
-    private static HashMap<Integer, Integer> buildAlphabetToIndexMap(CharSequence alphabet) {
+    static HashMap<Integer, Integer> buildCharToAlphabetIndexMap(CharSequence alphabet) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int alphabetIndex = 0; alphabetIndex < alphabet.length(); alphabetIndex++) {
             int alphabetChar = alphabet.charAt(alphabetIndex);
@@ -27,11 +25,7 @@ public class FixedAlphabet implements Alphabet {
 
     @Override
     public int indexOf(int character) {
-        Integer index = charToIndex.get(character);
-        if (index == null) {
-            throw new CharacterNotInAlphabetException(character, this);
-        }
-        return index;
+        return charToIndex.getOrDefault(character, NOT_FOUND);
     }
 
     @Override
@@ -42,5 +36,12 @@ public class FixedAlphabet implements Alphabet {
     @Override
     public int length() {
         return chars.length();
+    }
+
+    @Override
+    public String toString() {
+        return "FixedAlphabet{" +
+               "chars='" + chars + '\'' +
+               '}';
     }
 }
