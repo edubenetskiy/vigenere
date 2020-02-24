@@ -14,9 +14,13 @@ repositories {
 
 dependencies {
     implementation group: 'commons-io', name: 'commons-io', version: '2.6'
-    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter', version: '5.6.0'
 }
 
 application {
     mainClassName = 'space.banka.ifmo.infosec.vigenere.configuration.Main'
+}
+
+test {
+    useJUnitPlatform()
 }
