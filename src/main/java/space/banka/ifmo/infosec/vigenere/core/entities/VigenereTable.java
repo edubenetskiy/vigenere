@@ -2,7 +2,7 @@ package space.banka.ifmo.infosec.vigenere.core.entities;
 
 import space.banka.ifmo.infosec.vigenere.core.exceptions.IllegalKeyCharacterException;
 
-import static space.banka.ifmo.infosec.vigenere.core.entities.FixedAlphabet.NOT_FOUND;
+import static space.banka.ifmo.infosec.vigenere.core.entities.Alphabet.NOT_FOUND;
 
 public class VigenereTable {
 

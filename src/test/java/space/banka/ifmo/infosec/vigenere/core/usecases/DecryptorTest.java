@@ -2,6 +2,7 @@ package space.banka.ifmo.infosec.vigenere.core.usecases;
 
 import org.junit.jupiter.api.Test;
 import space.banka.ifmo.infosec.vigenere.core.entities.Alphabet;
+import space.banka.ifmo.infosec.vigenere.core.entities.Alphabets;
 import space.banka.ifmo.infosec.vigenere.core.usecases.decrypt.Decryptor;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -9,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class DecryptorTest {
 
-    private final Alphabet alphabet = Alphabet.lowerCaseLatin();
+    private final Alphabet alphabet = Alphabets.lowerCaseLatin();
     private Decryptor subject = new Decryptor();
 
     @Test

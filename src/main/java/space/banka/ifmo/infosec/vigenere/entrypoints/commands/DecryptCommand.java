@@ -2,6 +2,7 @@ package space.banka.ifmo.infosec.vigenere.entrypoints.commands;
 
 import org.apache.commons.io.IOUtils;
 import space.banka.ifmo.infosec.vigenere.core.entities.Alphabet;
+import space.banka.ifmo.infosec.vigenere.core.entities.Alphabets;
 import space.banka.ifmo.infosec.vigenere.core.usecases.decrypt.Decryptor;
 import space.banka.ifmo.infosec.vigenere.entrypoints.Command;
 
@@ -23,7 +24,7 @@ public class DecryptCommand implements Command {
             return EXIT_CODE_ERROR;
         }
 
-        Alphabet alphabet = Alphabet.latin();
+        Alphabet alphabet = Alphabets.latin();
 
         System.err.println("Reading ciphertext from stdin.");
         String ciphertext = IOUtils.toString(System.in, StandardCharsets.UTF_8);
