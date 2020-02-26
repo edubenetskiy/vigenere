@@ -1,5 +1,7 @@
 package space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.autocorrelation;
 
+import java.util.stream.IntStream;
+
 public class AutocorrelationCounter {
 
     /**
@@ -16,29 +18,23 @@ public class AutocorrelationCounter {
      * @return the autocorrelation coefficient for the specified string and period.
      */
     public double computeAutocorrelation(CharSequence string, int period) {
-        double autocorrelationCoeddicient = 0.0;
-        int matchCounter = 0;
-        string.toString().toLowerCase();
-        string = this.removeAllNonLetters(string);
-        CharSequence shiftedString = this.stringShift(string, period);
 
-        for (int i = 0; i < string.length(); i++) {
-            int character1 = string.charAt(i);
-            int character2 = shiftedString.charAt(i);
-            if (character1 == character2) {
-                matchCounter++;
-            }
-        }
+        int truncatedLength = string.length() - period;
 
-        double divider = string.length() - period;
-        autocorrelationCoeddicient = matchCounter / divider;
+        long numCorrelations = IntStream
+                .range(0, truncatedLength)
+                .filter(index -> {
+                    int character = string.charAt(index);
+                    int shiftedCharacter = string.charAt(index + period);
+                    return character == shiftedCharacter;
+                })
+                .count();
 
-        return autocorrelationCoeddicient;
+        return (double) numCorrelations / truncatedLength;
     }
 
     public CharSequence stringShift(CharSequence string, int period) {
-        CharSequence shiftedString = string.subSequence(string.length() - period, string.length()).toString() + string.subSequence(0, string.length() - period).toString();
-        return shiftedString;
+        return string.subSequence(period, string.length());
     }
 
     public CharSequence removeAllNonLetters(CharSequence string) {
