@@ -1,6 +1,11 @@
 package space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.coincidence;
 
+import space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.occurrences.CharacterOccurrenceCounter;
+import space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.occurrences.CharacterOccurrenceStatistic;
+
 public class MutualCoincidenceCounter {
+
+    private CharacterOccurrenceCounter counter = new CharacterOccurrenceCounter();
 
     /**
      * Calculates the index of mutual coincidence for the two specified strings.
@@ -13,7 +18,10 @@ public class MutualCoincidenceCounter {
      * @param strB the second string for which the IMC is computed.
      * @return the IMC for the two given strings.
      */
-    double computeIndexOfMutualCoincidence(CharSequence strA, CharSequence strB) {
-        throw new UnsupportedOperationException("Not implemented"); // TODO
+    public double computeIndexOfMutualCoincidence(CharSequence strA, CharSequence strB) {
+        CharacterOccurrenceStatistic statisticB = counter.countOccurrences(strB);
+        return strA.chars()
+                .map(character -> statisticB.getOccurrencesOf(character))
+                .sum() * 1.0 / (strA.length() * strB.length());
     }
 }
