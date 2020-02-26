@@ -25,6 +25,6 @@ class CharacterOccurrenceCounterTest {
         assertEquals(0.5000, statistic.getFrequencyOf('c'), 1e-4);
         assertEquals(0.0000, statistic.getFrequencyOf('#'), 1e-4);
 
-        assertEquals(input.length(), statistic.getTotalOccurrences());
+        assertEquals(input.chars().count(), statistic.getTotalOccurrences());
     }
 }

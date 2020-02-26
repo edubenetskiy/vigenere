@@ -26,7 +26,10 @@ public class CharacterOccurrenceStatistic {
     }
 
     public int getTotalOccurrences() {
-        return original.length();
+        return characterOccurences.values()
+                .stream()
+                .mapToInt(i -> i)
+                .sum();
     }
 
     public double getFrequencyOf(int character) {
