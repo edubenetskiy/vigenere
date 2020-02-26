@@ -1,6 +1,7 @@
 package space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.occurrences;
 
 import java.util.Map;
+import java.util.Set;
 
 public class CharacterOccurrenceStatistic {
 
@@ -10,6 +11,10 @@ public class CharacterOccurrenceStatistic {
     public CharacterOccurrenceStatistic(CharSequence original, Map<Integer, Integer> characterOccurrences) {
         this.original = original;
         this.characterOccurences = characterOccurrences;
+    }
+
+    public Set<Integer> characterSet() {
+        return characterOccurences.keySet();
     }
 
     public CharSequence getOriginal() {
