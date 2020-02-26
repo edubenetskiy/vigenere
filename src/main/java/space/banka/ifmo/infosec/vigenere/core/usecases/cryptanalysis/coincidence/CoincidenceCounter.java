@@ -1,5 +1,10 @@
 package space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.coincidence;
 
+import space.banka.ifmo.infosec.vigenere.core.entities.Alphabet;
+import space.banka.ifmo.infosec.vigenere.core.entities.Alphabets;
+import space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.occurrences.CharacterOccurrenceCounter;
+import space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.occurrences.CharacterOccurrenceStatistic;
+
 public class CoincidenceCounter {
 
     /**
@@ -12,7 +17,28 @@ public class CoincidenceCounter {
      * @param string the string for which the IC is computed.
      * @return the IC for the given string.
      */
-    double countIndexOfCoincidence(CharSequence string) {
-        throw new UnsupportedOperationException("Not implemented"); // TODO
+    public double countIndexOfCoincidence(CharSequence string) {
+        double freqsSum = 0.0;
+        double indexOfCoincidence = 0.0;
+        int N = 0;
+        Alphabet alphabet = Alphabets.lowerCaseLatin();
+        string.toString().toLowerCase();
+        CharacterOccurrenceStatistic freqs = new CharacterOccurrenceCounter().countOccurrences(string);
+
+
+        for(int i=0; i<string.length(); i++){
+            int character = string.charAt(i);
+            if(character>=(int) 'a' && character <= (int) 'z'){
+                N++;
+            }
+        }
+
+        for (int i = (int) 'a'; i<=(int) 'z'; i++) {
+            freqsSum += freqs.getOccurrencesOf(i) * (freqs.getOccurrencesOf(i) - 1);
+        }
+
+        indexOfCoincidence = freqsSum / (N*(N-1));
+
+        return indexOfCoincidence;
     }
 }
