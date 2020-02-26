@@ -1,4 +1,4 @@
-package space.banka.ifmo.infosec.vigenere.core.usecases.coincidence;
+package space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.coincidence;
 
 public class CoincidenceCounter {
 
