@@ -21,10 +21,8 @@ public class CoincidenceCounter {
         double freqsSum = 0.0;
         double indexOfCoincidence = 0.0;
         int N = 0;
-        Alphabet alphabet = Alphabets.lowerCaseLatin();
         string.toString().toLowerCase();
         CharacterOccurrenceStatistic freqs = new CharacterOccurrenceCounter().countOccurrences(string);
-
 
         for(int i=0; i<string.length(); i++){
             int character = string.charAt(i);
