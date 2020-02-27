@@ -15,7 +15,7 @@ public class FrequencyDistribution<T> {
         return frequencies.keySet();
     }
 
-    double getFrequencyOf(T element) {
+    public double getFrequencyOf(T element) {
         return frequencies.getOrDefault(element, 0.);
     }
 }
