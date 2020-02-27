@@ -21,6 +21,10 @@ application {
     mainClassName = 'space.banka.ifmo.infosec.vigenere.configuration.Main'
 }
 
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
 test {
     useJUnitPlatform()
 }
