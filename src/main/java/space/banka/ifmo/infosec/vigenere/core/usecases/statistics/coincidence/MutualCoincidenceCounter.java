@@ -1,7 +1,7 @@
-package space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.coincidence;
+package space.banka.ifmo.infosec.vigenere.core.usecases.statistics.coincidence;
 
-import space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.occurrences.CharacterOccurrenceCounter;
-import space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.occurrences.CharacterOccurrenceStatistic;
+import space.banka.ifmo.infosec.vigenere.core.usecases.statistics.occurrences.CharacterOccurrenceCounter;
+import space.banka.ifmo.infosec.vigenere.core.usecases.statistics.occurrences.CharacterOccurrenceStatistic;
 
 public class MutualCoincidenceCounter {
 
@@ -21,7 +21,7 @@ public class MutualCoincidenceCounter {
     public double computeIndexOfMutualCoincidence(CharSequence strA, CharSequence strB) {
         CharacterOccurrenceStatistic statisticB = counter.countOccurrences(strB);
         return strA.chars()
-                .map(character -> statisticB.getOccurrencesOf(character))
-                .sum() * 1.0 / (strA.length() * strB.length());
+                       .map(character -> statisticB.getOccurrencesOf(character))
+                       .sum() * 1.0 / (strA.length() * strB.length());
     }
 }

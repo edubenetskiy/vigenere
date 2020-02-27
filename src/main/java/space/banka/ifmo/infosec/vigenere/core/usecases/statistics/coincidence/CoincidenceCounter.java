@@ -1,7 +1,7 @@
-package space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.coincidence;
+package space.banka.ifmo.infosec.vigenere.core.usecases.statistics.coincidence;
 
-import space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.occurrences.CharacterOccurrenceCounter;
-import space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.occurrences.CharacterOccurrenceStatistic;
+import space.banka.ifmo.infosec.vigenere.core.usecases.statistics.occurrences.CharacterOccurrenceCounter;
+import space.banka.ifmo.infosec.vigenere.core.usecases.statistics.occurrences.CharacterOccurrenceStatistic;
 
 public class CoincidenceCounter {
 

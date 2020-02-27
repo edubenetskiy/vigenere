@@ -1,7 +1,7 @@
-package space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.friedman;
+package space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.keylen.friedman;
 
 import space.banka.ifmo.infosec.vigenere.core.entities.ColumnSlice;
-import space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.coincidence.CoincidenceCounter;
+import space.banka.ifmo.infosec.vigenere.core.usecases.statistics.coincidence.CoincidenceCounter;
 
 import java.util.AbstractMap;
 import java.util.Comparator;

@@ -1,4 +1,4 @@
-package space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.friedman;
+package space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.keylen.friedman;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;

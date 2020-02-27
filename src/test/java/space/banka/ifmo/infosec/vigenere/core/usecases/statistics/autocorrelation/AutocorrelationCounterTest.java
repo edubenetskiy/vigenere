@@ -1,4 +1,4 @@
-package space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.autocorrelation;
+package space.banka.ifmo.infosec.vigenere.core.usecases.statistics.autocorrelation;
 
 import org.junit.jupiter.api.Test;
 

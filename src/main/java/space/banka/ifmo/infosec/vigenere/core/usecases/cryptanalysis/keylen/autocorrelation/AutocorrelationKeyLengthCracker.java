@@ -1,4 +1,6 @@
-package space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.autocorrelation;
+package space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.keylen.autocorrelation;
+
+import space.banka.ifmo.infosec.vigenere.core.usecases.statistics.autocorrelation.AutocorrelationCounter;
 
 import java.util.AbstractMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.coincidence;
+package space.banka.ifmo.infosec.vigenere.core.usecases.statistics.coincidence;
 
 import org.junit.jupiter.api.Test;
 

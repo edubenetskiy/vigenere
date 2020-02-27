@@ -1,4 +1,4 @@
-package space.banka.ifmo.infosec.vigenere.core.usecases.cryptanalysis.occurrences;
+package space.banka.ifmo.infosec.vigenere.core.usecases.statistics.occurrences;
 
 import java.util.Map;
 import java.util.Set;
