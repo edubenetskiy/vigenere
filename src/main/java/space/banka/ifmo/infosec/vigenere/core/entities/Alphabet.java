@@ -18,7 +18,7 @@ public class Alphabet {
         return new Alphabet(alphabetChars, Alphabet.buildCharToAlphabetIndexMap(alphabetChars));
     }
 
-    static HashMap<Integer, Integer> buildCharToAlphabetIndexMap(CharSequence alphabet) {
+    private static HashMap<Integer, Integer> buildCharToAlphabetIndexMap(CharSequence alphabet) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int alphabetIndex = 0; alphabetIndex < alphabet.length(); alphabetIndex++) {
             int alphabetChar = alphabet.charAt(alphabetIndex);
