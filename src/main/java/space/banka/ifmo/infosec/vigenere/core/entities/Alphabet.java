@@ -58,6 +58,15 @@ public class Alphabet {
         return chars.length();
     }
 
+    /**
+     * Returns all characters of the alphabet in order of their occurrence in the alphabet.
+     *
+     * @return the alphabet's characters.
+     */
+    public String characters() {
+        return chars;
+    }
+
     @Override
     public String toString() {
         return "Alphabet{" +
